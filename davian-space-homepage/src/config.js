@@ -5,7 +5,7 @@ export const config = {
   
   // Site Identity
   siteName: 'Davian Space',
-  tagline: 'A quiet orbit of ideas, experiments, and creations',
+  tagline: 'A quiet orbit of ideas and creations',
   
   // Logo Paths (relative to public folder)
   logos: {
