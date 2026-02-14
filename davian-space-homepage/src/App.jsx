@@ -9,7 +9,7 @@ function App() {
     <ThemeProvider>
       <div className="min-h-screen bg-white dark:bg-gray-950 transition-all duration-700 animate-pageReveal">
         <Navbar />
-        <main>
+        <main className="pt-20">
           <Hero />
           <Projects />
         </main>

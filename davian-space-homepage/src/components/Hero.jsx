@@ -24,7 +24,6 @@ const Hero = () => {
             alt={config.siteName}
             className="h-48 w-auto sm:h-56 lg:h-72 object-contain transition-all duration-700 animate-logoSwitch"
             style={{ maxWidth: '90vw' }}
-            key={theme}
           />
         </div>
 
