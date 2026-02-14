@@ -13,7 +13,7 @@ const ProjectCard = ({ repo, index }) => {
 
   return (
     <div 
-      className="group relative bg-white/50 dark:bg-gray-800/50 backdrop-blur-xl rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-200/50 dark:border-gray-700/50 hover:scale-105 hover:-translate-y-2 animate-slideUp"
+      className="group relative bg-white/50 dark:bg-gray-800/50 backdrop-blur-xl rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-cyan-200/60 dark:border-cyan-500/30 hover:scale-105 hover:-translate-y-2 animate-slideUp"
       style={{ animationDelay: `${index * 0.1}s` }}
     >
       {/* Glassmorphism overlay */}
@@ -21,12 +21,12 @@ const ProjectCard = ({ repo, index }) => {
       
       {/* Glow effect on hover */}
       <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10 blur-xl"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/20 via-teal-400/20 to-sky-400/20 blur-xl"></div>
       </div>
       
       <div className="relative p-8 sm:p-10 flex flex-col h-full">
         {/* Repository name */}
-        <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-500 tracking-tight">
+        <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-cyan-600 dark:group-hover:text-cyan-300 transition-colors duration-500 tracking-tight">
           {repo.name}
         </h3>
 
@@ -49,7 +49,7 @@ const ProjectCard = ({ repo, index }) => {
           rel="noopener noreferrer"
           className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-2xl hover:bg-gray-800 dark:hover:bg-gray-100 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:scale-105"
         >
-          View Project
+          Open
           <svg className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
           </svg>
