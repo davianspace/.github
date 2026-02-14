@@ -55,59 +55,8 @@ const Hero = () => {
           }
         }
         
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-          }
-          to {
-            opacity: 1;
-          }
-        }
-        
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        
-        @keyframes logoSwitch {
-          from {
-            opacity: 0;
-            transform: scale(0.95);
-          }
-          to {
-            opacity: 1;
-            transform: scale(1);
-          }
-        }
-        
         .animate-blob {
           animation: blob 25s ease-in-out infinite;
-        }
-        
-        .animate-fadeIn {
-          animation: fadeIn 1s ease-out;
-        }
-        
-        .animate-fadeInUp {
-          animation: fadeInUp 0.8s ease-out backwards;
-        }
-        
-        .animate-logoSwitch {
-          animation: logoSwitch 0.7s ease-out;
-        }
-        
-        .animation-delay-200 {
-          animation-delay: 0.2s;
-        }
-        
-        .animation-delay-400 {
-          animation-delay: 0.4s;
         }
         
         .animation-delay-2000 {

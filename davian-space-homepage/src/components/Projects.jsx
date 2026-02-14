@@ -158,51 +158,6 @@ const Projects = () => {
           </div>
         )}
       </div>
-      
-      <style>{`
-        @keyframes slideUp {
-          from {
-            opacity: 0;
-            transform: translateY(40px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-          }
-          to {
-            opacity: 1;
-          }
-        }
-        
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        
-        .animate-slideUp {
-          animation: slideUp 0.8s ease-out backwards;
-        }
-        
-        .animate-fadeIn {
-          animation: fadeIn 0.8s ease-out;
-        }
-        
-        .animate-fadeInUp {
-          animation: fadeInUp 0.8s ease-out;
-        }
-      `}</style>
     </section>
   );
 };
