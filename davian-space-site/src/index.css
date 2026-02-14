@@ -1,0 +1,424 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark light;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 40px; /* Offset for sticky navbar */
+}
+
+body {
+  font-family: theme("fontFamily.body");
+  background-color: #f1f5f9;
+  color: #0f172a;
+}
+
+html.dark body {
+  background-color: #030712;
+  color: #f1f5f9;
+}
+
+::selection {
+  background: rgba(6, 182, 212, 0.35);
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-white/70 border border-white/40 backdrop-blur-xl shadow-glass dark:bg-white/5 dark:border-white/10;
+  }
+
+  .glow-border {
+    box-shadow: 0 0 0 1px rgba(6, 182, 212, 0.25), 0 0 30px rgba(6, 182, 212, 0.12), 0 0 60px rgba(139, 92, 246, 0.06);
+  }
+
+  .hero-gradient {
+    background-image: radial-gradient(ellipse at 30% 0%, rgba(6, 182, 212, 0.15), transparent 50%),
+      radial-gradient(ellipse at 70% 30%, rgba(139, 92, 246, 0.1), transparent 50%),
+      linear-gradient(180deg, #f1f5f9, #e2e8f0);
+    background-size: 200% 200%;
+    animation: gradientShift 18s ease infinite;
+  }
+
+  .stars {
+    position: absolute;
+    inset: 0;
+    background-image: 
+      radial-gradient(circle, #22d3ee 1px, transparent 1px),
+      radial-gradient(circle, #a78bfa 1.5px, transparent 1.5px),
+      radial-gradient(circle, #f472b6 0.8px, transparent 0.8px),
+      radial-gradient(circle, white 1px, transparent 1px),
+      radial-gradient(circle, #67e8f9 1.2px, transparent 1.2px),
+      radial-gradient(circle, #c4b5fd 0.5px, transparent 0.5px),
+      radial-gradient(circle, #fbbf24 0.6px, transparent 0.6px),
+      radial-gradient(circle, rgba(255,255,255,0.9) 0.8px, transparent 0.8px);
+    background-size: 250px 250px, 350px 350px, 180px 180px, 420px 420px, 300px 300px, 200px 200px, 280px 280px, 150px 150px;
+    background-position: 0 0, 40px 60px, 130px 270px, 70px 100px, 200px 50px, 160px 180px, 90px 220px, 250px 100px;
+    animation: twinkle 4s ease-in-out infinite, drift 180s linear infinite;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .galaxy-overlay {
+    position: absolute;
+    inset: 0;
+    background-image: 
+      radial-gradient(ellipse 600px 400px at 15% 20%, rgba(139, 92, 246, 0.4), transparent 50%),
+      radial-gradient(ellipse 500px 350px at 85% 80%, rgba(6, 182, 212, 0.35), transparent 50%),
+      radial-gradient(ellipse 800px 600px at 50% 50%, rgba(6, 182, 212, 0.2), transparent 60%);
+    opacity: 0;
+    filter: blur(80px);
+    pointer-events: none;
+    animation: galaxyPulse 8s ease-in-out infinite;
+  }
+  
+  .planets {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  .planet {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(2px);
+  }
+  
+  .planet-1 {
+    width: 120px;
+    height: 120px;
+    top: 15%;
+    left: 10%;
+    background: radial-gradient(circle at 30% 30%, rgba(220, 80, 50, 0.7), rgba(180, 60, 40, 0.5), rgba(140, 40, 30, 0.3));
+    box-shadow: inset -10px -10px 30px rgba(100, 30, 20, 0.6);
+    animation: planetFloat1 20s ease-in-out infinite, planetGlow 4s ease-in-out infinite;
+  }
+  
+  .planet-2 {
+    width: 80px;
+    height: 80px;
+    top: 60%;
+    right: 15%;
+    background: radial-gradient(circle at 35% 35%, rgba(30, 100, 200, 0.6), rgba(20, 70, 160, 0.5), rgba(15, 50, 120, 0.3));
+    box-shadow: inset -8px -8px 25px rgba(10, 40, 80, 0.7);
+    animation: planetFloat2 25s ease-in-out infinite, planetGlow 5s ease-in-out infinite;
+  }
+  
+  .planet-3 {
+    width: 60px;
+    height: 60px;
+    top: 75%;
+    left: 20%;
+    background: radial-gradient(circle at 40% 40%, rgba(230, 200, 140, 0.6), rgba(210, 180, 120, 0.4), rgba(190, 160, 100, 0.3));
+    box-shadow: inset -6px -6px 20px rgba(150, 120, 70, 0.5), 0 0 30px rgba(230, 200, 140, 0.3);
+    animation: planetFloat3 18s ease-in-out infinite, planetGlow 3.5s ease-in-out infinite;
+  }
+  
+  .planet-4 {
+    width: 100px;
+    height: 100px;
+    top: 30%;
+    right: 8%;
+    background: 
+      linear-gradient(90deg, 
+        rgba(210, 150, 90, 0.5) 0%, 
+        rgba(190, 130, 80, 0.4) 20%,
+        rgba(230, 170, 100, 0.5) 40%,
+        rgba(200, 140, 85, 0.4) 60%,
+        rgba(220, 160, 95, 0.5) 80%,
+        rgba(195, 135, 80, 0.4) 100%
+      ),
+      radial-gradient(circle at 30% 30%, rgba(240, 180, 110, 0.6), rgba(210, 150, 90, 0.4));
+    box-shadow: inset -10px -10px 30px rgba(150, 100, 60, 0.6);
+    animation: planetFloat4 22s ease-in-out infinite, planetGlow 4.5s ease-in-out infinite;
+  }
+}
+
+html.dark .hero-gradient {
+  background-image: theme("backgroundImage.hero-gradient");
+  background-size: 200% 200%;
+  animation: gradientShift 18s ease infinite;
+}
+
+html.dark .stars {
+  opacity: 1;
+}
+
+html.dark .galaxy-overlay {
+  opacity: 1;
+}
+
+html.dark .planets {
+  opacity: 1;
+}
+
+@keyframes drift {
+  0% {
+    background-position: 0 0, 40px 60px, 130px 270px, 70px 100px, 200px 50px, 160px 180px, 90px 220px, 250px 100px;
+  }
+  100% {
+    background-position: -300px -300px, -260px -240px, -170px -130px, -230px -200px, -100px -250px, -140px -120px, -190px -120px, -150px -200px;
+  }
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes galaxyPulse {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes planetFloat1 {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  33% {
+    transform: translate(30px, -20px);
+  }
+  66% {
+    transform: translate(-20px, 30px);
+  }
+}
+
+@keyframes planetFloat2 {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-40px, 25px);
+  }
+}
+
+@keyframes planetFloat3 {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(25px, -30px) rotate(180deg);
+  }
+}
+
+@keyframes planetFloat4 {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  33% {
+    transform: translate(-25px, 20px);
+  }
+  66% {
+    transform: translate(20px, -25px);
+  }
+}
+
+@keyframes planetGlow {
+  0%, 100% {
+    filter: blur(2px) brightness(1);
+  }
+  50% {
+    filter: blur(3px) brightness(1.3);
+    opacity: 1;
+  }
+
+  25% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  75% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .fade-up {
+    animation: fadeUp 1s ease both;
+  }
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes textGlowLight {
+  0% {
+    color: #0891b2;
+    text-shadow: 0 0 10px rgba(8, 145, 178, 0.3),
+                 0 0 20px rgba(8, 145, 178, 0.2);
+  }
+  20% {
+    color: #06b6d4;
+    text-shadow: 0 0 10px rgba(6, 182, 212, 0.3),
+                 0 0 20px rgba(6, 182, 212, 0.2);
+  }
+  40% {
+    color: #7c3aed;
+    text-shadow: 0 0 10px rgba(124, 58, 237, 0.3),
+                 0 0 20px rgba(124, 58, 237, 0.2);
+  }
+  60% {
+    color: #8b5cf6;
+    text-shadow: 0 0 10px rgba(139, 92, 246, 0.3),
+                 0 0 20px rgba(139, 92, 246, 0.2);
+  }
+  80% {
+    color: #a78bfa;
+    text-shadow: 0 0 10px rgba(167, 139, 250, 0.3),
+                 0 0 20px rgba(167, 139, 250, 0.2);
+  }
+  100% {
+    color: #0891b2;
+    text-shadow: 0 0 10px rgba(8, 145, 178, 0.3),
+                 0 0 20px rgba(8, 145, 178, 0.2);
+  }
+}
+
+@keyframes textGlowDark {
+  0% {
+    color: #22d3ee;
+    text-shadow: 0 0 15px rgba(34, 211, 238, 0.4),
+                 0 0 30px rgba(34, 211, 238, 0.2);
+  }
+  20% {
+    color: #67e8f9;
+    text-shadow: 0 0 15px rgba(103, 232, 249, 0.4),
+                 0 0 30px rgba(103, 232, 249, 0.2);
+  }
+  40% {
+    color: #a78bfa;
+    text-shadow: 0 0 15px rgba(167, 139, 250, 0.4),
+                 0 0 30px rgba(167, 139, 250, 0.2);
+  }
+  60% {
+    color: #c4b5fd;
+    text-shadow: 0 0 15px rgba(196, 181, 253, 0.4),
+                 0 0 30px rgba(196, 181, 253, 0.2);
+  }
+  80% {
+    color: #ddd6fe;
+    text-shadow: 0 0 15px rgba(221, 214, 254, 0.4),
+                 0 0 30px rgba(221, 214, 254, 0.2);
+  }
+  100% {
+    color: #22d3ee;
+    text-shadow: 0 0 15px rgba(34, 211, 238, 0.4),
+                 0 0 30px rgba(34, 211, 238, 0.2);
+  }
+}
+
+@keyframes textShine {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+@keyframes letterFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes logoGlowPulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 15px rgba(6, 182, 212, 0.4));
+  }
+  50% {
+    filter: drop-shadow(0 0 30px rgba(139, 92, 246, 0.6)) drop-shadow(0 0 50px rgba(6, 182, 212, 0.3));
+  }
+}
+
+@layer components {
+  .logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo-size {
+    height: 64px; /* Adjust the size as needed */
+    width: 64px; /* Adjust the size as needed */
+  }
+
+  .animated-title {
+    color: #0891b2;
+    text-shadow: 0 0 10px rgba(8, 145, 178, 0.3),
+                 0 0 20px rgba(8, 145, 178, 0.2);
+    animation: textGlowLight 6s ease-in-out infinite;
+  }
+  
+  html.dark .animated-title {
+    color: #22d3ee;
+    text-shadow: 0 0 15px rgba(34, 211, 238, 0.4),
+                 0 0 30px rgba(34, 211, 238, 0.2);
+    animation: textGlowDark 6s ease-in-out infinite;
+  }
+
+  .letter-animate {
+    display: inline-block;
+    animation: letterFloat 2s ease-in-out infinite;
+  }
+
+  .letter-animate:nth-child(1) { animation-delay: 0s; }
+  .letter-animate:nth-child(2) { animation-delay: 0.1s; }
+  .letter-animate:nth-child(3) { animation-delay: 0.2s; }
+  .letter-animate:nth-child(4) { animation-delay: 0.3s; }
+  .letter-animate:nth-child(5) { animation-delay: 0.4s; }
+  .letter-animate:nth-child(6) { animation-delay: 0.5s; }
+  .letter-animate:nth-child(7) { animation-delay: 0.6s; }
+  .letter-animate:nth-child(8) { animation-delay: 0.7s; }
+  .letter-animate:nth-child(9) { animation-delay: 0.8s; }
+  .letter-animate:nth-child(10) { animation-delay: 0.9s; }
+  .letter-animate:nth-child(11) { animation-delay: 1s; }
+  .letter-animate:nth-child(12) { animation-delay: 1.1s; }
+  .letter-animate:nth-child(13) { animation-delay: 1.2s; }
+  
+  .logo-glow-effect {
+    animation: logoGlowPulse 3s ease-in-out infinite;
+  }
+}
