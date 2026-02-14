@@ -31,7 +31,7 @@ const ProjectCard = ({ repo, index }) => {
         </h3>
 
         {/* Description */}
-        <p className="text-gray-600 dark:text-gray-300 mb-6 line-clamp-3 min-h-[4.5rem] text-lg leading-relaxed flex-grow">
+        <p className="text-gray-600 dark:text-gray-300 mb-6 line-clamp-3 text-lg leading-relaxed flex-grow">
           {repo.description || 'No description available'}
         </p>
 

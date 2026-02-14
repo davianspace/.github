@@ -38,35 +38,6 @@ const Hero = () => {
           {config.tagline}
         </p>
       </div>
-
-      <style>{`
-        @keyframes blob {
-          0%, 100% { 
-            transform: translate(0, 0) scale(1); 
-          }
-          25% { 
-            transform: translate(30px, -60px) scale(1.15); 
-          }
-          50% { 
-            transform: translate(-30px, 30px) scale(0.85); 
-          }
-          75% { 
-            transform: translate(60px, 60px) scale(1.1); 
-          }
-        }
-        
-        .animate-blob {
-          animation: blob 25s ease-in-out infinite;
-        }
-        
-        .animation-delay-2000 {
-          animation-delay: 2s;
-        }
-        
-        .animation-delay-4000 {
-          animation-delay: 4s;
-        }
-      `}</style>
     </section>
   );
 };
