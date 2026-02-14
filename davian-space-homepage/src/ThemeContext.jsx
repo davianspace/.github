@@ -14,6 +14,9 @@ export const ThemeProvider = ({ children }) => {
   useEffect(() => {
     const root = window.document.documentElement;
     
+    // Add transition class before changing theme
+    root.style.transition = 'background-color 0.7s ease-in-out, color 0.7s ease-in-out';
+    
     if (theme === 'dark') {
       root.classList.add('dark');
     } else {
