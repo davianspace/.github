@@ -15,8 +15,8 @@ export const siteConfig = {
       "A full-stack development studio building modern applications with .NET, Flutter, React, and Azure cloud services. We create enterprise-grade solutions ranging from cross-platform mobile apps to scalable web applications and cloud-native microservices. Every project leverages modern DevOps practices, containerization with Docker, and AI-assisted development for productivity, following Agile/SAFe principles and cloud-first architecture."
   },
   logos: {
-    light: "/assets/Light.png",
-    dark: "/assets/dark.png"
+    light: "/assets/Light.webp",
+    dark: "/assets/dark.webp"
   },
   technologies: [
     { label: ".NET & C#", detail: "Enterprise APIs, microservices, and cloud-native backends with ASP.NET Core", icon: "Zap" },
@@ -189,14 +189,14 @@ export const siteConfig = {
       name: "DavianVault",
       description: "Encrypted password manager with zero-knowledge architecture. Secure your credentials with military-grade encryption and biometric authentication.",
       url: "https://vault.davian.space",
-      favicon: "/assets/vault.png",
+      favicon: "/assets/vault.webp",
       tags: ["Security", "Encryption", "Zero-Knowledge", "Flutter", "Mobile App", "Free", "Paid"]
     },
     {
       name: "DavianUtilities",
       description: "Tools that every developer needs. A comprehensive suite of utilities for encoding, debugging, formatting, and productivity enhancement.",
       url: "https://tools.davian.space",
-      favicon: "/assets/tools.png",
+      favicon: "/assets/tools.webp",
       tags: ["Developer Tools", "Productivity", ".NET", "React", "Web App", "Free", "Paid"]
     }
   ],
