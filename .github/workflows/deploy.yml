@@ -27,11 +27,14 @@ jobs:
         with:
           node-version: '20'
           cache: 'npm'
+          cache-dependency-path: 'davian-space-site/package-lock.json'
 
       - name: Install dependencies
+        working-directory: ./davian-space-site
         run: npm ci
 
       - name: Build
+        working-directory: ./davian-space-site
         run: npm run build
 
       - name: Add Cache Headers Configuration
@@ -44,7 +47,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: ./davian-space-site/dist
 
   deploy:
     environment:
