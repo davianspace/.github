@@ -1,14 +1,17 @@
+import { lazy, Suspense } from "react";
 import { siteConfig } from "./config/siteConfig";
 import { useTheme } from "./hooks/useTheme";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import FeaturedApps from "./components/FeaturedApps";
-import About from "./components/About";
-import Skills from "./components/Skills";
-import Certifications from "./components/Certifications";
-import Process from "./components/Process";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
+
+// Lazy load below-the-fold components to reduce initial bundle
+const FeaturedApps = lazy(() => import("./components/FeaturedApps"));
+const About = lazy(() => import("./components/About"));
+const Skills = lazy(() => import("./components/Skills"));
+const Certifications = lazy(() => import("./components/Certifications"));
+const Process = lazy(() => import("./components/Process"));
+const Contact = lazy(() => import("./components/Contact"));
+const Footer = lazy(() => import("./components/Footer"));
 
 const App = () => {
   const { theme, toggleTheme } = useTheme();
@@ -29,18 +32,22 @@ const App = () => {
           tagline={siteConfig.hero.taglines[0]}
           theme={theme}
         />
-        <About
-          personal={siteConfig.personal}
-          organization={siteConfig.organization}
-          technologies={siteConfig.technologies}
-        />
-        <FeaturedApps apps={siteConfig.featuredApps} />
-        <Skills skills={siteConfig.skills} />
-        <Certifications certifications={siteConfig.certifications} />
-        <Process process={siteConfig.process} />
-        <Contact social={siteConfig.social} />
+        <Suspense fallback={<div style={{ minHeight: '100vh' }} />}>
+          <About
+            personal={siteConfig.personal}
+            organization={siteConfig.organization}
+            technologies={siteConfig.technologies}
+          />
+          <FeaturedApps apps={siteConfig.featuredApps} />
+          <Skills skills={siteConfig.skills} />
+          <Certifications certifications={siteConfig.certifications} />
+          <Process process={siteConfig.process} />
+          <Contact social={siteConfig.social} />
+        </Suspense>
       </main>
-      <Footer footerTagline={siteConfig.footerTagline} />
+      <Suspense fallback={null}>
+        <Footer footerTagline={siteConfig.footerTagline} />
+      </Suspense>
     </div>
   );
 };

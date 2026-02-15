@@ -86,9 +86,29 @@ export default {
         pulseGlow: "pulseGlow 5s ease-in-out infinite"
       },
       fontFamily: {
-        display: ["Space Grotesk", "sans-serif"],
-        hero: ["Orbitron", "sans-serif"],
-        body: ["Sora", "sans-serif"]
+        display: [
+          "Space Grotesk",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "Segoe UI",
+          "system-ui",
+          "sans-serif"
+        ],
+        hero: [
+          "Orbitron",
+          "Courier New",
+          "monospace"
+        ],
+        body: [
+          "Sora",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "Segoe UI",
+          "Roboto",
+          "Helvetica Neue",
+          "Arial",
+          "sans-serif"
+        ]
       }
     }
   },

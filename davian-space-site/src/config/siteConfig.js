@@ -189,14 +189,14 @@ export const siteConfig = {
       name: "DavianVault",
       description: "Encrypted password manager with zero-knowledge architecture. Secure your credentials with military-grade encryption and biometric authentication.",
       url: "https://vault.davian.space",
-      favicon: "https://vault.davian.space/logo.png",
+      favicon: "/assets/vault.png",
       tags: ["Security", "Encryption", "Zero-Knowledge", "Flutter", "Mobile App", "Free", "Paid"]
     },
     {
       name: "DavianUtilities",
       description: "Tools that every developer needs. A comprehensive suite of utilities for encoding, debugging, formatting, and productivity enhancement.",
       url: "https://tools.davian.space",
-      favicon: "https://tools.davian.space/logo.png",
+      favicon: "/assets/tools.png",
       tags: ["Developer Tools", "Productivity", ".NET", "React", "Web App", "Free", "Paid"]
     }
   ],

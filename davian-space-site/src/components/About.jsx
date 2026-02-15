@@ -52,7 +52,7 @@ const About = ({ personal, organization, technologies }) => (
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <IconComponent className="w-7 h-7 sm:w-8 sm:h-8 text-glow-500 dark:text-accent-400 flex-shrink-0" />
-                    <h4 className="font-display text-lg sm:text-xl text-slate-900 dark:text-white">{tech.label}</h4>
+                    <h3 className="font-display text-lg sm:text-xl text-slate-900 dark:text-white">{tech.label}</h3>
                   </div>
                   <span className="h-2 w-2 rounded-full bg-glow-500 shadow-glow dark:bg-glow-400" />
                 </div>

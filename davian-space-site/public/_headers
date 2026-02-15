@@ -1,0 +1,81 @@
+# Cache Control Headers for Netlify and Static Hosting
+# Learn more: https://docs.netlify.com/routing/headers/
+
+# HTML files - Short cache, always revalidate
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Root HTML
+/
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Hashed assets (JS/CSS with content hash) - Cache for 1 year (immutable)
+# These files include a hash in the filename, so they can be cached forever
+/assets/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+# Images - Cache for 1 year
+# If images change, update the filename or version
+/assets/*.png
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/*.jpg
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/*.jpeg
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/*.webp
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/*.svg
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/*.gif
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/*.ico
+  Cache-Control: public, max-age=31536000, immutable
+
+# Fonts - Cache for 1 year
+/assets/*.woff
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/*.woff2
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/*.ttf
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/*.eot
+  Cache-Control: public, max-age=31536000, immutable
+
+# Manifest and service worker - Revalidate frequently
+/manifest.json
+  Cache-Control: public, max-age=0, must-revalidate
+
+/service-worker.js
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Sitemap and robots - Cache for 1 day
+/sitemap.xml
+  Cache-Control: public, max-age=86400
+
+/robots.txt
+  Cache-Control: public, max-age=86400
+
+# Security headers
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Embedder-Policy: require-corp
+  Cross-Origin-Resource-Policy: same-origin
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; require-trusted-types-for 'script'

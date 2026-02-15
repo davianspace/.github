@@ -53,6 +53,9 @@ const FeaturedApps = ({ apps }) => {
                         <img
                           src={app.favicon}
                           alt={`${app.name} logo`}
+                          width="48"
+                          height="48"
+                          loading="lazy"
                           className={`w-10 h-10 sm:w-12 sm:h-12 object-contain transition-opacity duration-300 ${
                             loadState === 'loaded' ? 'opacity-100' : 'opacity-0 absolute inset-0'
                           }`}
@@ -66,7 +69,7 @@ const FeaturedApps = ({ apps }) => {
                         )}
                       </div>
                       <div>
-                        <h3 className="font-display text-xl sm:text-2xl text-slate-900 dark:text-white group-hover:text-glow-600 dark:group-hover:text-accent-400 transition-colors">
+                        <h3 className="font-display text-xl sm:text-2xl text-cyan-700 dark:text-white group-hover:text-glow-600 dark:group-hover:text-accent-400 transition-colors">
                           {app.name}
                         </h3>
                         <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-mono mt-1">

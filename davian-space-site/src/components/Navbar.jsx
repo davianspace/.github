@@ -25,12 +25,20 @@ const Navbar = ({ theme, onToggle, logoLight, logoDark }) => {
           <div className="logo-container relative flex items-center justify-center transition-transform duration-200 group-hover:animate-bounce w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20">
             <img
               src={logoLight}
-              alt="Logo"
+              alt="Davian Space logo"
+              width="80"
+              height="42"
+              loading="eager"
+              aria-hidden={theme !== "light"}
               className={`object-contain transition-opacity duration-300 w-full h-full ${theme === "light" ? "opacity-100" : "opacity-0"}`}
             />
             <img
               src={logoDark}
-              alt="Logo"
+              alt="Davian Space logo"
+              width="80"
+              height="42"
+              loading="eager"
+              aria-hidden={theme !== "dark"}
               className={`absolute inset-0 object-contain transition-opacity duration-300 w-full h-full ${theme === "dark" ? "opacity-100" : "opacity-0"}`}
             />
           </div>
@@ -60,6 +68,8 @@ const Navbar = ({ theme, onToggle, logoLight, logoDark }) => {
             onClick={toggleMenu}
             className="md:hidden p-2 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
             aria-label="Toggle menu"
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-menu"
           >
             {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
@@ -68,7 +78,12 @@ const Navbar = ({ theme, onToggle, logoLight, logoDark }) => {
       
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden border-t border-slate-200/60 dark:border-white/[0.06] bg-white/95 dark:bg-night-950/95 backdrop-blur-2xl">
+        <div 
+          id="mobile-menu"
+          className="md:hidden border-t border-slate-200/60 dark:border-white/[0.06] bg-white/95 dark:bg-night-950/95 backdrop-blur-2xl"
+          role="navigation"
+          aria-label="Mobile navigation"
+        >
           <div className="px-4 py-4 space-y-2">
             {menuItems.map((item) => (
               <a

@@ -1,0 +1,41 @@
+# Netlify Configuration
+# Learn more: https://docs.netlify.com/configure-builds/file-based-configuration/
+
+[build]
+  # Build command
+  command = "npm run build"
+  # Output directory
+  publish = "dist"
+
+# Redirect rules for SPA (Single Page Application)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Headers are also defined in public/_headers
+# This provides additional build settings
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Plugin configurations (optional)
+# Uncomment to use Netlify plugins
+
+# [[plugins]]
+#   package = "@netlify/plugin-lighthouse"
+#   
+#   [plugins.inputs]
+#     output_path = "reports/lighthouse.html"
+
+# Production context settings
+[context.production]
+  environment = { NODE_ENV = "production" }
+
+# Deploy Preview context
+[context.deploy-preview]
+  environment = { NODE_ENV = "production" }
+
+# Branch deploy context
+[context.branch-deploy]
+  environment = { NODE_ENV = "production" }

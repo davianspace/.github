@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Google Fonts are loaded async - this prevents FOIT (Flash of Invisible Text) */
+/* System fonts show immediately, then swap to Google Fonts when loaded */
+@layer base {
+  /* Ensure text is visible while fonts load */
+  .font-hero,
+  .font-display,
+  .font-body {
+    font-display: optional;
+  }
+}
+
 :root {
   color-scheme: dark light;
 }
@@ -40,7 +51,6 @@ html.dark body {
       radial-gradient(ellipse at 70% 30%, rgba(139, 92, 246, 0.1), transparent 50%),
       linear-gradient(180deg, #f1f5f9, #e2e8f0);
     background-size: 200% 200%;
-    animation: gradientShift 18s ease infinite;
   }
 
   .stars {
@@ -57,7 +67,7 @@ html.dark body {
       radial-gradient(circle, rgba(255,255,255,0.9) 0.8px, transparent 0.8px);
     background-size: 250px 250px, 350px 350px, 180px 180px, 420px 420px, 300px 300px, 200px 200px, 280px 280px, 150px 150px;
     background-position: 0 0, 40px 60px, 130px 270px, 70px 100px, 200px 50px, 160px 180px, 90px 220px, 250px 100px;
-    animation: twinkle 4s ease-in-out infinite, drift 180s linear infinite;
+    animation: twinkle 4s ease-in-out infinite;
     opacity: 0;
     pointer-events: none;
   }
@@ -85,7 +95,6 @@ html.dark body {
   .planet {
     position: absolute;
     border-radius: 50%;
-    filter: blur(2px);
   }
   
   .planet-1 {
@@ -141,7 +150,6 @@ html.dark body {
 html.dark .hero-gradient {
   background-image: theme("backgroundImage.hero-gradient");
   background-size: 200% 200%;
-  animation: gradientShift 18s ease infinite;
 }
 
 html.dark .stars {
@@ -229,10 +237,9 @@ html.dark .planets {
 
 @keyframes planetGlow {
   0%, 100% {
-    filter: blur(2px) brightness(1);
+    opacity: 0.85;
   }
   50% {
-    filter: blur(3px) brightness(1.3);
     opacity: 1;
   }
 
@@ -247,17 +254,7 @@ html.dark .planets {
   }
 }
 
-@keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
+
 
 @layer utilities {
   .text-balance {
@@ -366,10 +363,10 @@ html.dark .planets {
 
 @keyframes logoGlowPulse {
   0%, 100% {
-    filter: drop-shadow(0 0 15px rgba(6, 182, 212, 0.4));
+    opacity: 0.9;
   }
   50% {
-    filter: drop-shadow(0 0 30px rgba(139, 92, 246, 0.6)) drop-shadow(0 0 50px rgba(6, 182, 212, 0.3));
+    opacity: 1;
   }
 }
 
@@ -386,37 +383,39 @@ html.dark .planets {
   }
 
   .animated-title {
-    color: #0891b2;
+    color: #8b5cf6;
     text-shadow: 0 0 10px rgba(8, 145, 178, 0.3),
                  0 0 20px rgba(8, 145, 178, 0.2);
-    animation: textGlowLight 6s ease-in-out infinite;
   }
   
   html.dark .animated-title {
     color: #22d3ee;
     text-shadow: 0 0 15px rgba(34, 211, 238, 0.4),
                  0 0 30px rgba(34, 211, 238, 0.2);
-    animation: textGlowDark 6s ease-in-out infinite;
   }
 
   .letter-animate {
     display: inline-block;
+  }
+  
+  /* Only animate after page has loaded to prevent LCP delay */
+  .animations-ready .letter-animate {
     animation: letterFloat 2s ease-in-out infinite;
   }
 
-  .letter-animate:nth-child(1) { animation-delay: 0s; }
-  .letter-animate:nth-child(2) { animation-delay: 0.1s; }
-  .letter-animate:nth-child(3) { animation-delay: 0.2s; }
-  .letter-animate:nth-child(4) { animation-delay: 0.3s; }
-  .letter-animate:nth-child(5) { animation-delay: 0.4s; }
-  .letter-animate:nth-child(6) { animation-delay: 0.5s; }
-  .letter-animate:nth-child(7) { animation-delay: 0.6s; }
-  .letter-animate:nth-child(8) { animation-delay: 0.7s; }
-  .letter-animate:nth-child(9) { animation-delay: 0.8s; }
-  .letter-animate:nth-child(10) { animation-delay: 0.9s; }
-  .letter-animate:nth-child(11) { animation-delay: 1s; }
-  .letter-animate:nth-child(12) { animation-delay: 1.1s; }
-  .letter-animate:nth-child(13) { animation-delay: 1.2s; }
+  .animations-ready .letter-animate:nth-child(1) { animation-delay: 0s; }
+  .animations-ready .letter-animate:nth-child(2) { animation-delay: 0.1s; }
+  .animations-ready .letter-animate:nth-child(3) { animation-delay: 0.2s; }
+  .animations-ready .letter-animate:nth-child(4) { animation-delay: 0.3s; }
+  .animations-ready .letter-animate:nth-child(5) { animation-delay: 0.4s; }
+  .animations-ready .letter-animate:nth-child(6) { animation-delay: 0.5s; }
+  .animations-ready .letter-animate:nth-child(7) { animation-delay: 0.6s; }
+  .animations-ready .letter-animate:nth-child(8) { animation-delay: 0.7s; }
+  .animations-ready .letter-animate:nth-child(9) { animation-delay: 0.8s; }
+  .animations-ready .letter-animate:nth-child(10) { animation-delay: 0.9s; }
+  .animations-ready .letter-animate:nth-child(11) { animation-delay: 1s; }
+  .animations-ready .letter-animate:nth-child(12) { animation-delay: 1.1s; }
+  .animations-ready .letter-animate:nth-child(13) { animation-delay: 1.2s; }
   
   .logo-glow-effect {
     animation: logoGlowPulse 3s ease-in-out infinite;

@@ -22,29 +22,40 @@ const Hero = ({ logoLight, logoDark, orgName, tagline, theme }) => (
           <img
             src={logoLight}
             alt={`${orgName} light logo`}
-            className={`h-20 sm:h-28 md:h-36 w-auto max-w-[90%] animate-logoGlow logo-glow-effect transition-opacity duration-500 ${
+            width="384"
+            height="204"
+            loading="eager"
+            decoding="sync"
+            style={{ width: '280px', height: '140px', maxWidth: '90%' }}
+            aria-hidden={theme !== "light"}
+            className={`h-auto w-auto animate-logoGlow logo-glow-effect transition-opacity duration-500 ${
               theme === "light" ? "opacity-100" : "opacity-0 absolute"
             }`}
           />
           <img
             src={logoDark}
             alt={`${orgName} dark logo`}
-            className={`h-20 sm:h-28 md:h-36 w-auto max-w-[90%] animate-logoGlow logo-glow-effect transition-opacity duration-500 ${
+            width="384"
+            height="204"
+            loading="eager"
+            decoding="sync"
+            style={{ width: '280px', height: '140px', maxWidth: '90%' }}
+            aria-hidden={theme !== "dark"}
+            className={`h-auto w-auto animate-logoGlow logo-glow-effect transition-opacity duration-500 ${
               theme === "dark" ? "opacity-100" : "opacity-0 absolute"
             }`}
           />
         </div>
 
         <div className="space-y-4 sm:space-y-5">
-          <p className="text-[0.65rem] sm:text-xs font-medium uppercase tracking-[0.3em] sm:tracking-[0.5em] text-glow-600 dark:text-glow-400">
+          <p className="text-[0.65rem] sm:text-xs font-medium uppercase tracking-[0.3em] sm:tracking-[0.5em] text-slate-700 dark:text-glow-400">
             Creative Development Studio
           </p>
-          <h1 className="font-hero text-3xl sm:text-5xl md:text-7xl font-black tracking-wider text-glow-500 dark:text-glow-300 animated-title">
+          <h1 className="font-hero text-3xl sm:text-5xl md:text-7xl font-black tracking-wider animated-title">
             {orgName.split('').map((letter, index) => (
               <span 
                 key={index} 
                 className="letter-animate"
-                style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {letter === ' ' ? '\u00A0' : letter}
               </span>
