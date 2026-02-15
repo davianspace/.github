@@ -8,7 +8,7 @@
 
 *Building production-ready applications with modern technologies and cloud-first architecture*
 
-[ Portfolio](https://davianspace.github.io)  [ Contact](mailto:davianspace@proton.me)  [ LinkedIn](https://linkedin.com/in/davian-space)
+[Portfolio](https://davian.space)  [Contact](mailto:developers@davian.space)
 
 </div>
 
@@ -28,36 +28,40 @@ I specialize in building full-stack applications, leveraging modern frameworks a
 - **.NET** (C#) - Enterprise application development
 - **ASP.NET Core** - RESTful APIs and microservices
 - **Azure** - Cloud infrastructure and services
-- **PostgreSQL / SQL Server** - Database design and optimization
+- **PostgreSQL / SQL Server / Oracle** - Database design and optimization
 
 ### Mobile Development
 - **Flutter** - Cross-platform mobile applications (iOS & Android)
 - **Dart** - Modern, performant mobile app development
+- **.NET MAUI** - Modern, performant mobile app development
+
+### Application Development
+- **.NET** - Modern, performant app development
 
 ### Web Development
-- **React** - Interactive user interfaces
+- **React / Angular** - Interactive user interfaces
 - **TypeScript / JavaScript** - Type-safe frontend development
-- **Tailwind CSS** - Modern, responsive styling
+- **Tailwind CSS / SCSS** - Modern, responsive styling
 - **Vite** - Fast build tooling
 
 ### DevOps & Tools
-- **Git & GitHub** - Version control and CI/CD
-- **Docker** - Containerization
-- **Azure DevOps** - Pipeline automation
-- **REST APIs & GraphQL** - API design and integration
+- **Git / GitHub / Harness / Azure DevOps / Bitbucket** - Version control 
+- **Docker / Podman / Kubernetes / Openshift** - Containerization
+- **Tekton / Azure DevOps / Github Actions / Jenkins / Atlassian / Harness / Bamboo / RLM** - CI/CD Pipeline automation
+- **Webhook/ gRPC / Websocket / Soup / REST APIs / GraphQL** - API design and integration
 
 ---
 
 ##  Featured Projects
 
-### [DavianVault](https://github.com/davianspace/DavianVault)
+### [DavianVault](https://vault.davian.space)
  **Secure Password Manager**
 - Cross-platform password management with end-to-end encryption
 - Built with Flutter for iOS and Android
 - Zero-knowledge architecture ensuring maximum privacy
 - Biometric authentication and secure storage
 
-### [DavianUtilities](https://github.com/davianspace/DavianUtilities)
+### [DavianUtilities](https://tools.davian.space)
  **Developer Productivity Tools**
 - Collection of practical utilities for developers
 - Built with .NET and modern web technologies
@@ -119,10 +123,8 @@ I specialize in building full-stack applications, leveraging modern frameworks a
 
 ##  Connect
 
-- **Portfolio**: [davianspace.github.io](https://davianspace.github.io)
-- **Email**: [davianspace@proton.me](mailto:davianspace@proton.me)
-- **LinkedIn**: [linkedin.com/in/davian-space](https://linkedin.com/in/davian-space)
-- **Twitter**: [@davianspace](https://twitter.com/davianspace)
+- **Portfolio**: [davianspace.github.io](https://davian.space)
+- **Email**: [developers@davian.space](mailto:developers@davian.space)
 
 ---
 
