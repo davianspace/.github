@@ -6,15 +6,14 @@ export const useTheme = () => {
   const [theme, setTheme] = useState("dark");
 
   useEffect(() => {
-    // Prefer stored theme, fallback to system preference.
+    // Prefer stored theme, default to dark mode if not set.
     const stored = localStorage.getItem(STORAGE_KEY);
     if (stored) {
       setTheme(stored);
-      return;
+    } else {
+      // Default to dark mode
+      setTheme("dark");
     }
-
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    setTheme(prefersDark ? "dark" : "light");
   }, []);
 
   useEffect(() => {

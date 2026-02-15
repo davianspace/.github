@@ -53,6 +53,16 @@
       href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <!-- Prevent flash of light mode - apply dark class immediately -->
+    <script>
+      (function() {
+        const stored = localStorage.getItem('davian-space-theme');
+        // Default to dark mode
+        if (!stored || stored === 'dark') {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
   </head>
   <body class="antialiased">
     <!-- Structured Data (JSON-LD) for SEO -->
