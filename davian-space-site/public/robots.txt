@@ -6,10 +6,15 @@ Allow: /
 Disallow: /api/
 Disallow: /*.json$
 
+# Bing-specific rules
+User-agent: Bingbot
+Allow: /
+Disallow: /api/
+Crawl-delay: 0
+
 # Sitemap location
 Sitemap: https://davian.space/sitemap.xml
 
 # Additional sitemap formats (if you add them later)
 # Sitemap: https://davian.space/sitemap-images.xml
 # Sitemap: https://davian.space/sitemap-videos.xml
-
