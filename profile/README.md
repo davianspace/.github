@@ -123,7 +123,7 @@ I specialize in building full-stack applications, leveraging modern frameworks a
 
 ##  Connect
 
-- **Portfolio**: [davianspace.github.io](https://davian.space)
+- **Portfolio**: [davian.space](https://davian.space)
 - **Email**: [developers@davian.space](mailto:developers@davian.space)
 
 ---
