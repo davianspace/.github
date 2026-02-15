@@ -201,8 +201,8 @@ export const siteConfig = {
     }
   ],
   social: {
-    github: "https://github.com/iamdavianrathod",
-    linkedin: "https://ca.linkedin.com/in/iamdavianrathod",
+    github: "https://github.com/davianspace",
+    linkedin: "https://ca.linkedin.com/in/davian-space",
     gravatar: "https://gravatar.com/iamdavianrathod"
   },
   hero: {
