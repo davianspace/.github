@@ -39,6 +39,11 @@ export default defineConfig({
     deferCSSPlugin()
   ],
   base: "/",
+  // esbuild configuration for production
+  esbuild: {
+    drop: ['console', 'debugger'], // Remove console.log and debugger in production
+    legalComments: 'none'
+  },
   build: {
     // Enable content-based hashing for cache busting
     rollupOptions: {
@@ -57,8 +62,8 @@ export default defineConfig({
         manualChunks: (id) => {
           // Vendor chunks
           if (id.includes('node_modules')) {
-            // React core - most critical, keep separate
-            if (id.includes('react') || id.includes('react-dom')) {
+            // React core and react-dom together (prevents circular dependency)
+            if (id.includes('react') || id.includes('react-dom') || id.includes('scheduler')) {
               return 'react-vendor';
             }
             // Lucide icons - split into separate chunk
@@ -66,7 +71,9 @@ export default defineConfig({
               return 'icons';
             }
             // Other vendor code
-            return 'vendor';
+            if (id.includes('node_modules')) {
+              return 'vendor';
+            }
           }
         }
       }
@@ -79,15 +86,9 @@ export default defineConfig({
     assetsInlineLimit: 15360, // Inline assets under 15KB including CSS
     // CSS code splitting
     cssCodeSplit: false, // Bundle all CSS into one file for better caching
-    // Minification options for better compression
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: true, // Remove console.log in production
-        drop_debugger: true,
-        pure_funcs: ['console.log', 'console.info', 'console.debug']
-      }
-    }
+    // Minification with esbuild (faster and built-in)
+    minify: 'esbuild',
+    target: 'es2015'
   },
   // Optimize dependencies
   optimizeDeps: {
