@@ -1,6 +1,11 @@
 import PropTypes from "prop-types";
 import SectionHeading from "./SectionHeading";
-import * as Icons from "lucide-react";
+import { Zap, Smartphone, Layers, Cloud, Container, Rocket, Code, Database, Box } from "lucide-react";
+
+// Icon mapping for dynamic lookup
+const iconMap = {
+  Zap, Smartphone, Layers, Cloud, Container, Rocket, Code, Database, Box
+};
 
 const About = ({ personal, organization, technologies }) => (
   <section id="about" className="relative py-8 sm:py-12 scroll-mt-[1.5rem] sm:scroll-mt-16">
@@ -43,7 +48,7 @@ const About = ({ personal, organization, technologies }) => (
         />
         <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {technologies.map((tech) => {
-            const IconComponent = Icons[tech.icon] || Icons.Box;
+            const IconComponent = iconMap[tech.icon] || Box;
             return (
               <div
                 key={tech.label}

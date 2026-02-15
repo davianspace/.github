@@ -1,6 +1,11 @@
 import PropTypes from "prop-types";
 import SectionHeading from "./SectionHeading";
-import * as Icons from "lucide-react";
+import { Search, Network, LayoutList, Code2, Rocket, Box } from "lucide-react";
+
+// Icon mapping for dynamic lookup
+const iconMap = {
+  Search, Network, LayoutList, Code2, Rocket, Box
+};
 
 const Process = ({ process }) => (
   <section id="process" className="relative py-8 sm:py-12 scroll-mt-[1.5rem] sm:scroll-mt-16">
@@ -14,7 +19,7 @@ const Process = ({ process }) => (
       
       <div className="grid gap-6 sm:gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {process.map((step, index) => {
-          const IconComponent = Icons[step.icon] || Icons.Box;
+          const IconComponent = iconMap[step.icon] || Box;
           return (
             <div
               key={index}

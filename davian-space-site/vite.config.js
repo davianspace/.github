@@ -1,8 +1,43 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
+// Custom plugin to defer CSS loading
+function deferCSSPlugin() {
+  return {
+    name: 'defer-css',
+    enforce: 'post',
+    transformIndexHtml(html) {
+      // Transform CSS link to use media="print" trick for async loading
+      let cssLinks = [];
+      const transformed = html.replace(
+        /<link([^>]*?)rel="stylesheet"([^>]*?)>/gi,
+        (match, before, after) => {
+          // Skip if already has media attribute or is a font
+          if (match.includes('media=') || match.includes('fonts.googleapis')) {
+            return match;
+          }
+          
+          // Store original link for noscript fallback
+          cssLinks.push(match);
+          
+          // Add media="print" and onload handler for async CSS
+          const asyncLink = `<link${before}rel="stylesheet"${after} media="print" onload="this.media='all';this.onload=null;">`;
+          
+          // Add noscript fallback immediately after
+          return `${asyncLink}\n    <noscript>${match}</noscript>`;
+        }
+      );
+      
+      return transformed;
+    }
+  };
+}
+
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    deferCSSPlugin()
+  ],
   base: "/",
   build: {
     // Enable content-based hashing for cache busting
@@ -17,6 +52,22 @@ export default defineConfig({
             return 'assets/[name].[ext]';
           }
           return 'assets/[name]-[hash].[ext]';
+        },
+        // Manual chunking for better code splitting
+        manualChunks: (id) => {
+          // Vendor chunks
+          if (id.includes('node_modules')) {
+            // React core - most critical, keep separate
+            if (id.includes('react') || id.includes('react-dom')) {
+              return 'react-vendor';
+            }
+            // Lucide icons - split into separate chunk
+            if (id.includes('lucide-react')) {
+              return 'icons';
+            }
+            // Other vendor code
+            return 'vendor';
+          }
         }
       }
     },
@@ -24,13 +75,32 @@ export default defineConfig({
     chunkSizeWarningLimit: 1000,
     // Source maps for debugging in production
     sourcemap: true,
-    // Asset inlining threshold (10kb default - inline small CSS)
-    assetsInlineLimit: 10240, // Inline CSS under 10KB to eliminate render-blocking
+    // Asset inlining threshold - increased to inline CSS
+    assetsInlineLimit: 15360, // Inline assets under 15KB including CSS
     // CSS code splitting
-    cssCodeSplit: false // Bundle all CSS into one file for better caching
+    cssCodeSplit: false, // Bundle all CSS into one file for better caching
+    // Minification options for better compression
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true, // Remove console.log in production
+        drop_debugger: true,
+        pure_funcs: ['console.log', 'console.info', 'console.debug']
+      }
+    }
   },
   // Optimize dependencies
   optimizeDeps: {
     include: ['react', 'react-dom', 'lucide-react']
+  },
+  // CSS optimization
+  css: {
+    devSourcemap: false,
+    preprocessorOptions: {
+      css: {
+        // Minimize CSS output
+        charset: false
+      }
+    }
   }
 });

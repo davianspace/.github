@@ -116,22 +116,29 @@ class FontLoader {
    */
   onFontsLoaded() {
     this.fontsLoaded = true;
-    document.documentElement.classList.add('fonts-loaded');
     
-    // Dispatch custom event
-    window.dispatchEvent(new CustomEvent('fontsloaded', {
-      detail: { fonts: this.fonts }
-    }));
+    // Use requestAnimationFrame to batch DOM updates and prevent forced reflow
+    requestAnimationFrame(() => {
+      document.documentElement.classList.add('fonts-loaded');
+      
+      // Dispatch custom event
+      window.dispatchEvent(new CustomEvent('fontsloaded', {
+        detail: { fonts: this.fonts }
+      }));
 
-    console.log('✓ Fonts loaded successfully');
+      console.log('✓ Fonts loaded successfully');
+    });
   }
 
   /**
    * Called when font loading fails or times out
    */
   onFontsLoadFailed() {
-    document.documentElement.classList.add('fonts-failed');
-    console.warn('Font loading failed or timed out, using fallbacks');
+    // Use requestAnimationFrame to batch DOM updates and prevent forced reflow
+    requestAnimationFrame(() => {
+      document.documentElement.classList.add('fonts-failed');
+      console.warn('Font loading failed or timed out, using fallbacks');
+    });
   }
 
   /**

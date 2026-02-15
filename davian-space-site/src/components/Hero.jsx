@@ -22,11 +22,12 @@ const Hero = ({ logoLight, logoDark, orgName, tagline, theme }) => (
           <img
             src={logoLight}
             alt={`${orgName} light logo`}
-            width="384"
-            height="204"
+            width="264"
+            height="140"
             loading="eager"
+            fetchpriority="high"
             decoding="sync"
-            style={{ width: '280px', height: '140px', maxWidth: '90%' }}
+            style={{ width: '264px', height: '140px' }}
             aria-hidden={theme !== "light"}
             className={`h-auto w-auto animate-logoGlow logo-glow-effect transition-opacity duration-500 ${
               theme === "light" ? "opacity-100" : "opacity-0 absolute"
@@ -35,11 +36,12 @@ const Hero = ({ logoLight, logoDark, orgName, tagline, theme }) => (
           <img
             src={logoDark}
             alt={`${orgName} dark logo`}
-            width="384"
-            height="204"
+            width="264"
+            height="140"
             loading="eager"
+            fetchpriority="high"
             decoding="sync"
-            style={{ width: '280px', height: '140px', maxWidth: '90%' }}
+            style={{ width: '264px', height: '140px' }}
             aria-hidden={theme !== "dark"}
             className={`h-auto w-auto animate-logoGlow logo-glow-effect transition-opacity duration-500 ${
               theme === "dark" ? "opacity-100" : "opacity-0 absolute"

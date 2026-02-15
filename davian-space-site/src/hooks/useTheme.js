@@ -18,12 +18,17 @@ export const useTheme = () => {
 
   useEffect(() => {
     // Keep the document class and storage in sync.
-    const root = document.documentElement;
-    if (theme === "dark") {
-      root.classList.add("dark");
-    } else {
-      root.classList.remove("dark");
-    }
+    // Use requestAnimationFrame to batch DOM updates and prevent forced reflow
+    requestAnimationFrame(() => {
+      const root = document.documentElement;
+      if (theme === "dark") {
+        root.classList.add("dark");
+      } else {
+        root.classList.remove("dark");
+      }
+    });
+    
+    // Update localStorage (non-blocking)
     localStorage.setItem(STORAGE_KEY, theme);
   }, [theme]);
 

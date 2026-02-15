@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Performance Optimizations - Prevent Forced Reflows
+ * - will-change: Hints browser to optimize animations
+ * - contain: Isolates element to prevent layout recalculations
+ * - transform/opacity: GPU-accelerated properties
+ * - requestAnimationFrame: Used in JS for smooth DOM updates
+ */
+
 /* Google Fonts are loaded async - this prevents FOIT (Flash of Invisible Text) */
 /* System fonts show immediately, then swap to Google Fonts when loaded */
 @layer base {
@@ -70,6 +77,8 @@ html.dark body {
     animation: twinkle 4s ease-in-out infinite;
     opacity: 0;
     pointer-events: none;
+    will-change: opacity;
+    contain: layout style paint;
   }
 
   .galaxy-overlay {
@@ -83,6 +92,8 @@ html.dark body {
     filter: blur(80px);
     pointer-events: none;
     animation: galaxyPulse 8s ease-in-out infinite;
+    will-change: opacity, transform;
+    contain: layout style paint;
   }
   
   .planets {
@@ -95,6 +106,8 @@ html.dark body {
   .planet {
     position: absolute;
     border-radius: 50%;
+    will-change: transform, opacity;
+    contain: layout style paint;
   }
   
   .planet-1 {
@@ -263,6 +276,7 @@ html.dark .planets {
 
   .fade-up {
     animation: fadeUp 1s ease both;
+    will-change: opacity, transform;
   }
 }
 
@@ -396,6 +410,7 @@ html.dark .planets {
 
   .letter-animate {
     display: inline-block;
+    will-change: transform;
   }
   
   /* Only animate after page has loaded to prevent LCP delay */
@@ -419,5 +434,6 @@ html.dark .planets {
   
   .logo-glow-effect {
     animation: logoGlowPulse 3s ease-in-out infinite;
+    will-change: opacity;
   }
 }

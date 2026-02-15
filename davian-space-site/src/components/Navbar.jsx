@@ -29,6 +29,7 @@ const Navbar = ({ theme, onToggle, logoLight, logoDark }) => {
               width="80"
               height="42"
               loading="eager"
+              fetchpriority="high"
               aria-hidden={theme !== "light"}
               className={`object-contain transition-opacity duration-300 w-full h-full ${theme === "light" ? "opacity-100" : "opacity-0"}`}
             />
@@ -38,6 +39,7 @@ const Navbar = ({ theme, onToggle, logoLight, logoDark }) => {
               width="80"
               height="42"
               loading="eager"
+              fetchpriority="high"
               aria-hidden={theme !== "dark"}
               className={`absolute inset-0 object-contain transition-opacity duration-300 w-full h-full ${theme === "dark" ? "opacity-100" : "opacity-0"}`}
             />
