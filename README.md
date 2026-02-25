@@ -1,6 +1,6 @@
 ﻿<div align="center">
 
-<img src="../Logo/Light.png" alt="Davian Space Logo" width="180"/>
+<img src="Logo/Light.png" alt="Davian Space Logo" width="180"/>
 
 # DAVIAN SPACE
 
