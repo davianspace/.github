@@ -1,172 +1,186 @@
-﻿# Davian Space
+﻿<div align="center">
 
-<div align="center">
-  
-###  Creative Development Studio
-  
-**Full-Stack Developer | SAFe Certified Architect | Cloud Enthusiast**
+<img src="../Logo/Light.png" alt="Davian Space Logo" width="180"/>
 
-*Building production-ready applications with modern technologies and cloud-first architecture*
+# DAVIAN SPACE
 
-[Portfolio](https://davian.space)  [Contact](mailto:developers@davian.space)
+**Engineering Reliable Software. Building with Intent. Shipping with Confidence.**
+
+[![Website](https://img.shields.io/badge/Website-davian.space-0A0A0A?style=for-the-badge&logo=google-chrome&logoColor=white)](https://davian.space)
+[![Contact](https://img.shields.io/badge/Email-developers@davian.space-1F6FEB?style=for-the-badge&logo=gmail&logoColor=white)](mailto:developers@davian.space)
+
+![Stars](https://img.shields.io/github/stars/davianspace/.github?style=for-the-badge)
+![Forks](https://img.shields.io/github/forks/davianspace/.github?style=for-the-badge)
+![Issues](https://img.shields.io/github/issues/davianspace/.github?style=for-the-badge)
 
 </div>
 
 ---
 
-##  About
+## 🚀 About Davian Space
 
-Davian Space is an independent GitHub organization maintained by a **solo developer** with a studio mindset. Every project here is crafted end-to-end with attention to detail, security, and user experience.
+**Davian Space** is a software engineering organization focused on building scalable applications, reusable infrastructure, security tools, and developer utilities.
 
-I specialize in building full-stack applications, leveraging modern frameworks and cloud technologies to deliver scalable, secure, and maintainable solutions. From backend APIs to mobile apps and responsive web interfaces  I handle the complete development lifecycle.
+We operate across:
 
----
+* 📦 **pub.dev infrastructure packages**
+* 🧩 **.NET applications**
+* 🔐 Security-focused tooling
+* 🛠️ Developer utilities & automation systems
+* 🌍 Open-source engineering projects
+* 🧪 Experimental architecture labs
 
-##  Tech Stack
-
-### Backend & Cloud
-- **.NET** (C#) - Enterprise application development
-- **ASP.NET Core** - RESTful APIs and microservices
-- **Azure** - Cloud infrastructure and services
-- **PostgreSQL / SQL Server / Oracle** - Database design and optimization
-
-### Mobile Development
-- **Flutter** - Cross-platform mobile applications (iOS & Android)
-- **Dart** - Modern, performant mobile app development
-- **.NET MAUI** - Modern, performant mobile app development
-
-### Application Development
-- **.NET** - Modern, performant app development
-
-### Web Development
-- **React / Angular** - Interactive user interfaces
-- **TypeScript / JavaScript** - Type-safe frontend development
-- **Tailwind CSS / SCSS** - Modern, responsive styling
-- **Vite** - Fast build tooling
-
-### DevOps & Tools
-- **Git / GitHub / Harness / Azure DevOps / Bitbucket** - Version control 
-- **Docker / Podman / Kubernetes / Openshift** - Containerization
-- **Tekton / Azure DevOps / Github Actions / Jenkins / Atlassian / Harness / Bamboo / RLM** - CI/CD Pipeline automation
-- **Webhook/ gRPC / Websocket / Soup / REST APIs / GraphQL** - API design and integration
+We don’t build noise.
+We build systems.
 
 ---
 
-##  Featured Projects
+## 🧠 Engineering Philosophy
 
-### [DavianVault](https://vault.davian.space)
- **Secure Password Manager**
-- Cross-platform password management with end-to-end encryption
-- Built with Flutter for iOS and Android
-- Zero-knowledge architecture ensuring maximum privacy
-- Biometric authentication and secure storage
+* Clean, maintainable architecture
+* Security-first design
+* Performance without overengineering
+* Production-ready standards
+* Documentation that respects developer time
 
-### [DavianUtilities](https://tools.davian.space)
- **Developer Productivity Tools**
-- Collection of practical utilities for developers
-- Built with .NET and modern web technologies
-- Focus on performance and ease of use
+Code should scale.
+Security should be invisible.
+Tooling should feel effortless.
 
 ---
 
-##  Certifications & Credentials
+## 📦 pub.dev Infrastructure Ecosystem
 
-- **SAFe 5 Certified Architect** - Scaled Agile Framework expertise
-- **Microsoft Certified: Azure Fundamentals** - Cloud computing foundations
-- **Microsoft Certified: Azure AI Fundamentals** - AI and ML basics
-- Continuous learning in cloud architecture, security, and modern development practices
+Davian Space maintains a cohesive modular foundation for building scalable Dart applications.
 
----
+### 🏗 Application Hosting & Composition
 
-##  Development Philosophy
+* **davianspace_hosting**
+  ![Pub Version](https://img.shields.io/pub/v/davianspace_hosting?style=flat-square)
 
-### Privacy-First
-- Minimal data collection
-- Clear user control over personal information
-- Transparent data handling policies
-
-### Security-Focused
-- Industry-standard encryption
-- Regular security audits
-- Secure coding practices
-
-### Quality-Driven
-- Clean, maintainable code
-- Comprehensive testing
-- Performance optimization
-- User-centric design
-
-### Agile & SAFe
-- Iterative development
-- Continuous integration and delivery
-- Value-driven prioritization
-- Regular feedback loops
+* **davianspace_dependencyinjection**
+  ![Pub Version](https://img.shields.io/pub/v/davianspace_dependencyinjection?style=flat-square)
 
 ---
 
-##  How I Build
+### ⚙ Configuration & Options
 
-1. ** Discovery & Research** - Market analysis, user research, and requirement gathering
-2. ** Design** - UI/UX design, architecture planning, and technical specifications
-3. ** Development** - Agile sprints, clean code, and continuous integration
-4. ** Testing** - Unit tests, integration tests, and quality assurance
-5. ** Deployment** - CI/CD pipelines, cloud deployment, and monitoring
-6. ** Iteration** - User feedback, analytics, and continuous improvement
+* **davianspace_configuration**
+  ![Pub Version](https://img.shields.io/pub/v/davianspace_configuration?style=flat-square)
 
----
-
-##  GitHub Stats
-
-![Profile Views](https://komarev.com/ghpvc/?username=davianspace&color=blueviolet&style=flat-square)
+* **davianspace_options**
+  ![Pub Version](https://img.shields.io/pub/v/davianspace_options?style=flat-square)
 
 ---
 
-##  Connect
+### 📜 Observability
 
-- **Portfolio**: [davian.space](https://davian.space)
-- **Email**: [developers@davian.space](mailto:developers@davian.space)
-
----
-
-##  What You'll Find Here
-
-Repositories under Davian Space include:
-
-*  Production applications and tools
-*  Public documentation and guides
-*  Privacy, security, and legal policies
-*  Developer resources and utilities
-*  Experimental projects and prototypes
-
-Each repository is well-documented with clear scope, setup instructions, and contribution guidelines.
+* **davianspace_logging**
+  ![Pub Version](https://img.shields.io/pub/v/davianspace_logging?style=flat-square)
 
 ---
 
-##  Collaboration
+### 🛡 Resilience & Traffic Control
 
-While Davian Space is maintained by a single developer, contributions and feedback are always welcome! Feel free to:
+* **davianspace_http_ratelimit**
+  ![Pub Version](https://img.shields.io/pub/v/davianspace_http_ratelimit?style=flat-square)
 
-- Report bugs or suggest features through GitHub Issues
-- Submit pull requests for improvements
-- Share feedback or ideas
-- Star repositories you find useful
+* **davianspace_http_resilience**
+  ![Pub Version](https://img.shields.io/pub/v/davianspace_http_resilience?style=flat-square)
 
 ---
 
-##  License & Legal
+These packages form a modular infrastructure layer inspired by modern backend architecture patterns.
 
-All projects clearly specify their licensing terms. Most personal projects use MIT or similar permissive licenses to encourage learning and collaboration.
+---
 
-For questions about licensing, privacy policies, or terms of service, please refer to individual repository documentation or reach out directly.
+## 🖥️ .NET Applications
+
+Our .NET projects explore:
+
+![.NET](https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
+![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white)
+![ASP.NET Core](https://img.shields.io/badge/ASP.NET-Core-5C2D91?style=for-the-badge)
+![Azure](https://img.shields.io/badge/Azure-Cloud-0078D4?style=for-the-badge&logo=microsoftazure&logoColor=white)
+![Clean Architecture](https://img.shields.io/badge/Architecture-Clean-black?style=for-the-badge)
+![REST APIs](https://img.shields.io/badge/APIs-REST-blue?style=for-the-badge)
+
+* Scalable backend services
+* Secure authentication systems
+* Clean architecture implementations
+* Enterprise-grade API design
+
+Built for production. Not demonstrations.
+
+---
+
+## 🔐 Security & Utilities
+
+Security is built in, not bolted on.
+
+We develop:
+
+* Password management systems
+* Encryption utilities
+* Secure configuration frameworks
+* Internal developer productivity tools
+* Automation pipelines
+
+---
+
+## 🧪 Experimental Labs
+
+Some repositories exist to explore:
+
+* Architecture evolution
+* Performance optimization
+* Infrastructure prototypes
+* Cross-platform integration models
+
+Not everything ships.
+Everything sharpens engineering discipline.
+
+---
+
+## 📊 Organization Standards
+
+![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)
+![Maintained](https://img.shields.io/badge/Maintained-Active-success?style=for-the-badge)
+![Build](https://img.shields.io/badge/Build-Stable-brightgreen?style=for-the-badge)
+
+We value:
+
+* Automated CI/CD
+* Clean commit history
+* Meaningful versioning
+* Issue-driven development
+
+---
+
+## 🤝 Contributing
+
+We welcome:
+
+* Well-structured issues
+* Thoughtful pull requests
+* Architecture discussions
+* Security reviews
+
+If you’re building serious systems, you’ll feel at home here.
+
+---
+
+## 📫 Contact
+
+🌐 https://davian.space
+📧 [developers@davian.space](mailto:developers@davian.space)
+
+Let’s build systems that last.
 
 ---
 
 <div align="center">
 
-###  Building with Purpose
-
-*Davian Space exists to provide a clean, transparent, and trustworthy space for building and maintaining software with care and responsibility.*
-
-**Thank you for visiting!** 
+**Davian Space — Engineering beyond the obvious.**
 
 </div>

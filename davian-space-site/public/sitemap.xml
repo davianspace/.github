@@ -1,17 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-  
-  <!-- Homepage - Single Page Application (SPA) -->
-  <!-- Note: Hash fragments (#about, #skills) are not crawlable as separate pages -->
-  <!-- Search engines only see the main page content -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://davian.space/</loc>
-    <lastmod>2026-02-15T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-02-26T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-
 </urlset>
