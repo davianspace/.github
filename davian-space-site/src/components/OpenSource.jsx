@@ -36,7 +36,7 @@ const OpenSource = () => {
         <p className="section-subtitle mb-4">
           A Dart infrastructure ecosystem maintained by Davian Space.
         </p>
-        <p className="text-sm text-neutral-500 mb-14">
+        <p className="text-sm text-neutral-400 mb-14">
           These packages provide foundational infrastructure primitives for
           Dart and Flutter applications, modeled after proven patterns from the
           .NET ecosystem.

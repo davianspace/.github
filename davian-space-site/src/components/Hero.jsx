@@ -50,7 +50,7 @@ const Hero = () => {
 
         <a
           href="#about"
-          className="inline-block mt-20 text-neutral-600 hover:text-neutral-400 transition-colors"
+          className="inline-block mt-20 text-neutral-400 hover:text-neutral-200 transition-colors"
           aria-label="Scroll to about section"
         >
           <ArrowDown size={20} className="animate-bounce" />

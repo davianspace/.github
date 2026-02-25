@@ -46,7 +46,7 @@ const TechStack = () => {
                     key={tech}
                     className="text-neutral-300 text-sm flex items-center gap-2"
                   >
-                    <span className="w-1 h-1 rounded-full bg-neutral-600 flex-shrink-0" />
+                    <span aria-hidden="true" className="w-1 h-1 rounded-full bg-neutral-600 flex-shrink-0" />
                     {tech}
                   </li>
                 ))}

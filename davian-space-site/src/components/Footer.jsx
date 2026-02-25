@@ -3,7 +3,7 @@ const Footer = () => {
 
   return (
     <footer className="border-t border-neutral-800/40 py-10">
-      <div className="section-container flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-neutral-500">
+      <div className="section-container flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-neutral-400">
         <span>&copy; {year} Davian Space. All rights reserved.</span>
         <a
           href="https://davian.space"
