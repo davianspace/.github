@@ -1,4 +1,4 @@
-﻿<div align="center">
+<div align="center">
 
 <img src="Logo/Light.png" alt="Davian Space Logo" width="180"/>
 
@@ -58,8 +58,14 @@ Davian Space maintains a cohesive modular foundation for building scalable Dart 
 * **davianspace_hosting**
   ![Pub Version](https://img.shields.io/pub/v/davianspace_hosting?style=flat-square)
 
+* **davianspace_hosting_flutter**
+  ![Pub Version](https://img.shields.io/pub/v/davianspace_hosting_flutter?style=flat-square)
+
 * **davianspace_dependencyinjection**
   ![Pub Version](https://img.shields.io/pub/v/davianspace_dependencyinjection?style=flat-square)
+
+* **davianspace_reactive**
+  ![Pub Version](https://img.shields.io/pub/v/davianspace_reactive?style=flat-square)
 
 ---
 
